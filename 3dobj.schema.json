@@ -1,0 +1,161 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "A 3DJSON Onject",
+    "type":"object",
+    "properties": {
+        "vertices": {
+            "type":"array",
+            "title": "Vertex Data",
+            "items": {
+                "type":"array",
+                "description": "a Vertex",
+                "maxItems": 6,
+                "minItems": 6,
+                "items": [
+                    {
+                        "type":"array",
+                        "description": "The XYZ location of this point",
+                        "minItems":3,
+                        "maxLength": 3,
+                        "items": [
+                            {
+                                "type":"number",
+                                "description": "X location"
+                            },
+                            {
+                                "type":"number",
+                                "description": "Y location"
+                            },
+                            {
+                                "type":"number",
+                                "description": "Z location"
+                            }
+                        ]
+                    },
+                    {
+                        "type":"array",
+                        "description": "The undeformed XYZ location of this point",
+                        "minItems":3,
+                        "maxItems": 3,
+                        "items": [
+                            {
+                                "type":"number",
+                                "description": "undeformed X location"
+                            },
+                            {
+                                "type":"number",
+                                "description": "undeformed Y location"
+                            },
+                            {
+                                "type":"number",
+                                "description": "undeformed Z location"
+                            }
+                        ]
+                    },
+                    {
+                        "type":"array",
+                        "description": "The Normal Vector of this point",
+                        "minItems":3,
+                        "maxItems": 3,
+                        "items": [
+                            {
+                                "type":"number",
+                                "description": "Normal X"
+                            },
+                            {
+                                "type":"number",
+                                "description": "Normal Y"
+                            },
+                            {
+                                "type":"number",
+                                "description": "Normal Z"
+                            }
+                        ]
+                    },
+                    {
+                        "type":"number",
+                        "description": "Vertex Bevel Weight Factor",
+                        "minimum": 0,
+                        "maximum": 1,
+                        "default": 0.0
+                    },
+                    {
+                        "type":"array",
+                        "description": "Vertex Groups this belongs to. NYI!",
+                        "minItems":0,
+                        "maxItems": 0,
+                        "default":[]
+                    },
+                    {
+                        "type":"boolean",
+                        "description": "This vertex is hidden",
+                        "default":false
+                    }
+                ]
+            }
+            
+        },
+        "edges":{
+            "description": "Edge Data",
+            "type":"array",
+            "items": {
+                "type":"array",
+                "items": [
+                    {
+                        "type":"number",
+                        "description": "Edge Bevel Weight Factor",
+                        "minimum": 0,
+                        "maximum": 1,
+                        "default": 0.0
+                    },
+                    {
+                        "type":"number",
+                        "description": "Crease Factor",
+                        "minimum": 0,
+                        "maximum": 1,
+                        "default": 0.0
+                    },
+                    {
+                        "type":"boolean",
+                        "description": "This edge is hidden",
+                        "default":false
+                    },
+                    {
+                        "type":"boolean",
+                        "description": "This edge is not connected to other geometry.",
+                        "default":false
+                    },
+                    {
+                        "type":"boolean",
+                        "description": "This edge is marked as sharp",
+                        "default":false
+                    },
+                    {
+                        "type":"boolean",
+                        "description": "This edge is marked as a seam",
+                        "default":false
+                    },
+                    {
+                        "type":"array",
+                        "description": "The vertices that comprise this edge",
+                        "minItems":2,
+                        "maxItems": 2,
+                        "uniqueItems": true,
+                        "items": [
+                            {
+                                "type":"integer",
+                                "minimum": 0,
+                                "description": "The first vertex"
+                            },
+                            {
+                                "type":"integer",
+                                "minimum": 0,
+                                "description": "The second vertex"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}
