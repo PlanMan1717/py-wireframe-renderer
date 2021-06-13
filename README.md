@@ -3,27 +3,26 @@ Quasi-rendering engine written in Python.
 
 ## Who does what here?
 
-- **blenderToJSON.py**: He is a Blender script that exports 3D objects from Blender as JSON files.
-- **draw3D.py**: He takes the JSON file and makes a Turtle drawing from it. :warning: SLOW :warning:
+- **blenderToJSON.py**: Blender script that exports 3D objects from Blender as JSON files.
+- **draw3D.py**: Takes the JSON file and makes a Turtle drawing from it. :warning: Can be SLOW :warning:
 - **test9.json**: Example file. It is a hex nut. Takes about 3 minutes to render for me.
-- **3dobj.schema.json**: JSON Schema for the JSON export.
+- **3dobj.schema.json**: JSON schema.
 
-## Does this work?
+## Demonstration
 
 ![](https://github.com/PlanMan1717/py-wireframe-renderer/blob/main/Screenshot%202020-10-19%20103802.png?raw=true)
 
-Yes.
-
-## Coming Soon...
+## Planned features
 
 - blenderToJSON.py should be a Blender Add-On.
 - Optimizations
-- Removing unused preoperties from the JSON.
-- More examples.
+- More pythonic code.
+- Removing unused properties from the JSON schema.
+- More example files
 
 # License: *Creative Commons Attribution Share-Alike* (CC BY-SA)
 
-[License Text](https://creativecommons.org/licenses/by-sa/4.0/)
+[Full License Text Here](https://creativecommons.org/licenses/by-sa/4.0/)
 
 You are free to:
 - **Share** — copy and redistribute the material in any medium or format
