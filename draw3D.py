@@ -11,17 +11,11 @@ t = turtle.Turtle()
 string_obj = open("./test9.json", 'r')
 obj = json.loads(string_obj.read())
 
-# Create Placeholders
-vertices = []
-lines = []
-
 # Create list of vertices and their positions
-for vert in obj["vertices"]:
-    vertices.append(vert[0])
+vertices = [vert[0] for vert in obj["vertices"]]
 
 # Create list of edges and their delimiting vertices
-for line in obj["edges"]:
-    lines.append(line[-1])
+lines = [line[-1] for line in obj["edges"]]
 
 # Set up turtle
 t.speed(0)
@@ -36,7 +30,6 @@ focalL = 1.5
 a = 500
 
 # Define functions
-
 
 def plot(x, y):
     """Place a dot at (X, Y) on the screen."""
